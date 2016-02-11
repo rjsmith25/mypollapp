@@ -1,15 +1,17 @@
 (function(){
+	"use strict";
 	angular
 	  .module('app',[
 		/*third party modules*/
 		'ngRoute',
 		'chart.js',
 		/*my modules*/
-		'app.common',
 		'app.auth',
+		'app.common',
+		'app.pollDashboard', 
 		'app.landing',
 		'app.home',
-		'app.pollDashboard',
+	 
 	]) 
 	.config(configFunction)
 	.run(runFunction)

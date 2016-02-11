@@ -1,4 +1,5 @@
 (function(){
+	"use strict";
 	angular.module('app.pollDashboard')
 		.controller('userPollsController',userPollsController)
 
@@ -7,7 +8,6 @@
 		function userPollsController(pollsService,authentication,$location){
 			  var vm = this;
 			  vm.userPolls;
-			  vm.pollshare = null;
 			  vm.editPoll = function(pollid){
 			  	$location.path('/dashboard/polls/edit/' + pollid);
 			  }
@@ -15,7 +15,6 @@
 			  	return pollsService.deletePoll(pollid)
 			  				.then(function(response){
 			  					getpollsbyid();
-			  					console.log("poll was successfully deleted " + response)
 			  				})
 			  				.catch(function(error){
 			  					console.log("unable to delete poll " + error)

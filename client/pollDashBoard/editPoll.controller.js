@@ -1,4 +1,5 @@
 (function(){
+	"use strict";
 	angular.module('app.pollDashboard')
 		.controller('editPollController',editPollController)
 
@@ -16,7 +17,6 @@
 			 	if(vm.newChoice.answer!==''){
 			 		pollsService.createPollChoice(vm.newChoice,$routeParams.pollid)
 			 			.then(function(response){
-			 				console.log(response);
 			 				getPollById();
 			 				vm.newChoice = {
 			 					answer:'',

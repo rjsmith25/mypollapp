@@ -1,3 +1,5 @@
 (function(){
-	angular.module('app.pollDashboard',[]);
+	"use strict";
+	angular
+		.module('app.pollDashboard',[]);
 })()
