@@ -1,0 +1,50 @@
+<section id="intro-dashboard">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12">
+				<h1 class="intro-text">DashBoard</h1>
+				<a href="/#dashboard/polls" class="my-polls btn btn-primary">My polls</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="dashboard">
+	<div class="container">
+	 <div class="row">
+		<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+		  <div class="panel panel-default dashboard-panel">
+		    <div class="panel-heading clearfix">
+		      <h3 class="panel-title">New Poll</h3>
+		    </div>
+		    
+		    <div class="panel-body">
+				<form ng-submit='vm.submitPoll()'>
+				 	<div class="form-group">
+				 		<div class="input-group input-group-md">
+					        <span class="input-group-addon"><i class="fa fa-info-circle"></i></span>
+					        <input ng-model="vm.poll.question" type="text" class="form-control input-md" placeholder="Question" required>
+			      		</div>
+				 	</div>
+				 	<div ng-repeat="choice in vm.poll.choices" class="form-group">
+				 		<div class="input-group input-group-md">
+					        <span class="input-group-addon"><i class="fa fa-circle-o"></i></span>
+					        <input ng-model="choice.answer" type="text" class="form-control input-md" placeholder="Choice" required>
+					        <span ng-click="vm.removeChoice($index)" class="input-group-addon close-choice"><i class="fa fa-times"></i></span>
+			      		</div>
+				 	</div>
+					
+					<div class="btn-choice text-center">
+						<button ng-click="vm.addMoreChoice()" class="btn btn-default text-center" type="button">Add More Choices</button>
+					</div>
+				 	 <button type="submit" class="btn btn-default pull-right">Create</button>
+				</form>
+		    </div>
+		  </div>
+		  <div ng-show = "vm.isCreated === true" class="alert alert-success" role="alert">Poll was Created...</div>
+				
+		<div ng-show="vm.isCreated === false" class="alert alert-danger" role="alert">Poll was not able to be created...</div>
+	  </div>
+	</div>
+  </div>
+</section>

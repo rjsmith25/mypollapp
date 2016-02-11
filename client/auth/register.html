@@ -1,0 +1,36 @@
+<section id="intro-dashboard">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-12">
+                <h1 class="intro-text">Register</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="register">
+    <div class="container">
+        <form name="authForm" ng-submit="authForm.$valid && vm.register()" class="form-signin" novalidate>
+            <h2 class="form-signin-heading">Sign up</h2>
+            <p ng-show="vm.error" class="text-danger" ng-bind="vm.error"></p>
+            <label for="name" class="sr-only">Name</label>
+            <input ng-model="vm.user.name" type="text" name="username" id="inputUsername" class="form-control" placeholder="Enter your name" required autofocus>
+            <div ng-show="authForm.$submitted">
+                <p ng-show="authForm.username.$error.required" class="text-danger">Username required</p>
+            </div>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input ng-model="vm.user.email" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }" type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required>
+            <div ng-show="authForm.$submitted">
+                <p ng-show="authForm.email.$error.required" class="text-danger">Email required</p>
+                <p ng-show="authForm.email.$error.email" class="text-danger">Please enter a valid email.</p>
+            </div>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input ng-model="vm.user.password" type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div ng-show="authForm.$submitted">
+                <p ng-show="authForm.password.$error.required" class="text-danger">Password required</p>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      </form>
+   </div>                
+</section>
+                                

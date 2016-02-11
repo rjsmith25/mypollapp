@@ -1,0 +1,31 @@
+<section id="intro-dashboard">
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-xs-12">
+				<h1 class="intro-text">Edit Poll</h1>
+				<a href="/#dashboard" class="my-dash btn btn-primary">Create Polls</a>
+				<a href="/#dashboard/polls" class="my-polls btn btn-primary">My polls</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="dashboard">
+	<div class="container">
+		<div class="row text-center">
+			<h2>{{vm.poll.question}}</h2>
+			<ul class="list-group">
+				<li ng-repeat="choice in vm.poll.choices" class="list-group-item">
+				{{choice.answer}}
+				</li>
+			</ul>
+			<div class="col-xs-12 col-sm-offset-3 col-sm-6">
+				 <div class="input-group input-group-md">
+		        <span class="input-group-addon"><i class="fa fa-circle-o"></i></span>
+		        <input ng-model="vm.newChoice.answer" type="text" class="form-control input-md" placeholder="new choice"> 
+			 </div>
+			 <button ng-click="vm.addChoice()" class="new-choice btn btn-default text-center">add new choice</button>
+			</div>
+		</div>
+	</div>
+</section> 
