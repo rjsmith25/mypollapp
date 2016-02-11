@@ -1,15 +1,15 @@
 (function(){
 	"use strict";
 	angular.module('app.pollDashboard')
-		.controller('userPollsController',userPollsController)
+		.controller('pollDashboardUserController',pollDashboardUserController)
 
-		userPollsController.$inject = ['pollsService','authentication','$location'];
+		pollDashboardUserController.$inject = ['pollsService','authentication','$location'];
 
-		function userPollsController(pollsService,authentication,$location){
+		function pollDashboardUserController(pollsService,authentication,$location){
 			  var vm = this;
 			  vm.userPolls;
 			  vm.editPoll = function(pollid){
-			  	$location.path('/dashboard/polls/edit/' + pollid);
+			  	$location.path('/dashboard/polls/' + pollid);
 			  }
 			  vm.deletePoll = function(pollid){
 			  	return pollsService.deletePoll(pollid)

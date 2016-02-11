@@ -1,11 +1,11 @@
 (function(){
 	"use strict";
 	angular.module('app.pollDashboard')
-		.controller('editPollController',editPollController)
+		.controller('pollDashboardEditController',pollDashboardEditController)
 
-		editPollController.$inject = ['$routeParams','pollsService'];
+		pollDashboardEditController.$inject = ['$routeParams','pollsService'];
 
-		function editPollController($routeParams,pollsService){
+		function pollDashboardEditController($routeParams,pollsService){
 			 var vm = this;
 			 vm.poll;
 			 vm.newChoice = {

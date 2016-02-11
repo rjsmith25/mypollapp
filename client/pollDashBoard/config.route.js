@@ -11,17 +11,16 @@
 	 		controller:'pollDashboardController',
 	 		controllerAs:'vm',
 	 		resolve:{user:resolveUser}
-	 	});
+	 	})
 	 	$routeProvider.when('/dashboard/polls',{
-	 		templateUrl:'/pollDashBoard/userPolls.html',
-	 		controller:'userPollsController',
+	 		templateUrl:'/pollDashBoard/pollDashboardUser.html',
+	 		controller:'pollDashboardUserController',
 	 		controllerAs:'vm',
 	 		resolve:{user:resolveUser} 
-	 	});
-	 	
-	 	$routeProvider.when('/dashboard/polls/edit/:pollid',{
-	 		templateUrl:'/pollDashBoard/editPoll.html',
-	 		controller:'editPollController',
+	 	})	 	
+	 	$routeProvider.when('/dashboard/polls/:pollid',{
+	 		templateUrl:'/pollDashBoard/pollDashboardEdit.html',
+	 		controller:'pollDashboardEditController',
 	 		controllerAs:'vm',
 	 		resolve:{user:resolveUser}
 	 	})
