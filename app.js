@@ -37,7 +37,7 @@ var clientFiles = [
   'client/pollDashBoard/pollDashboard.module.js',
   'client/pollDashBoard/config.route.js',
   'client/pollDashBoard/pollDashboard.controller.js',
-  'client/pollDashboard/userPolls.controller.js',
+  'client/pollDashBoard/userPolls.controller.js',
   'client/pollDashboard/editPoll.controller.js',
   'client/auth/auth.module.js',
   'client/auth/config.route.js',
