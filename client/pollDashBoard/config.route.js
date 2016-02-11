@@ -15,7 +15,7 @@
 	 		templateUrl:'/pollDashBoard/userPolls.html',
 	 		controller:'userPollsController',
 	 		controllerAs:'vm',
-	 		resolve:{user:resolveUser}
+	 		resolve:{user:resolveUser} 
 	 	});
 	 	
 	 	$routeProvider.when('/dashboard/polls/edit/:pollid',{
