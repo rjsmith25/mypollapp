@@ -8,8 +8,18 @@
 		function pollDashboardUserController(pollsService,authentication,$location){
 			  var vm = this;
 			  vm.userPolls;
+			  vm.pollLink = null;
+
+			  vm.sharePoll = function(pollid){
+			  	if($location.port()){
+			    	vm.pollLink = $location.protocol() + '://'+ $location.host() +':'+  $location.port() + "/dashboard/polls/share/" + pollid;
+			    }else{
+			    	vm.pollLink = $location.protocol() + '://'+ $location.host() + "/dashboard/polls/share/" + pollid;
+			    } 
+			  }
+
 			  vm.editPoll = function(pollid){
-			  	$location.path('/dashboard/polls/' + pollid);
+			  	$location.path('/dashboard/polls/' + pollid); 
 			  }
 			  vm.deletePoll = function(pollid){
 			  	return pollsService.deletePoll(pollid)

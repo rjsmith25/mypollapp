@@ -19,7 +19,6 @@
 				var deferred = $q.defer();
 				$http.post('/api/register',user)
 			          .then(function(response){
-			          	console.log(response);
 			          	saveToken(response.data.token);
 			          	deferred.resolve(response.data);
 			          })

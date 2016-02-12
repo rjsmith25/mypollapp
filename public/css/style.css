@@ -36,7 +36,7 @@ a:active{
     color:#ffffff;
 }
 
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a { 
     color: #ffffff;
     font-size:18px;
 }
@@ -149,20 +149,36 @@ a:active{
   margin-top: 40px;
  }
   #home,
-  #dashboard{
+  #dashboard,
+  #user-dashboard,
+  #share{
    min-height: 440px;
+ }
+
+ .btn-create{
+   margin-top:10px;
  } 
 
  #service{
     min-height:500px;
  }
 
- #home-result{
+ #home-result,
+ #share-result{
   min-height:300px;
  }
  
  #dashboard p{
    font-size: 18px;
+ }
+
+ #intro-dashboard.intro-text{
+   font-size:20px;
+ }
+
+ #user-dashboard{
+   padding-top: 40px;
+
  }
 
  .my-polls,
@@ -214,3 +230,18 @@ a:active{
  .copyright{
    margin-top:20px; 
  }
+
+ /* media queries */
+
+ @media (max-width: 320px) {
+    #home-result,
+    #share-result{
+       padding-top: 60px;
+    }
+}
+
+@media (max-width: 380px) {
+   .dashboard-text{
+      font-size:50px;
+    }
+}  

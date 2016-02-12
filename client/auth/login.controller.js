@@ -20,7 +20,7 @@
                         authentication
                             .login(vm.user)
                             .then(function(response){
-                                $location.path('/dashboard/polls')
+                                $location.path('/dashboard')
                             })
                             .catch(function(error){
                                 vm.error = error.statusText;

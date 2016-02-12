@@ -9,17 +9,18 @@
 	</div>
 </section>
 
-<section id="dashboard">
+<section id="user-dashboard">
 	<div class="container">
 		<div class="row">
 			<ul class="list-group">
 				<li ng-repeat="poll in vm.userPolls" class="list-group-item">
 				 <span ng-click="vm.deletePoll(poll._id)" class="editor delete"><i class="fa fa-times"></i> Delete</span>
 				 <span ng-click="vm.editPoll(poll._id)" class="editor edit"><a href=""><i class="fa fa-pencil-square-o"></i> Edit</i></a></span>
-				 <span  class="share-btn editor"><i class="share fa fa-link"></i> Share</i></span>
+				 <span ng-click="vm.sharePoll(poll._id)"  class="share-btn editor"><i class="share fa fa-link"></i> Share</i></span>
 				{{poll.question}}
 				</li>
 			</ul>
+			<div ng-show="vm.pollLink">Share poll: <a href="{{vm.pollLink}}">{{vm.pollLink}}</a></div>
 		</div>
 	</div>
 </section> 

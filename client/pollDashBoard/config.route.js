@@ -24,8 +24,19 @@
 	 		controllerAs:'vm',
 	 		resolve:{user:resolveUser}
 	 	})
-	 }	
-
+	 	$routeProvider.when('/dashboard/polls/share/:pollid',{
+	 		templateUrl:'/pollDashBoard/pollDashboardShare.html',
+	 		controller:'pollDashboardShareController',
+	 		controllerAs:'vm'	
+	 	})
+	 	$routeProvider.when('/dashboard/polls/share/result/:pollid',{
+	 		templateUrl:'/pollDashBoard/pollDashboardResult.html',
+	 		controller:'pollDashboardResultController',
+	 		controllerAs:'vm'	
+	 	})
+	 }
+	 
+	 // check if user is logged in 
 	 resolveUser.$inject = ['authentication','$q'];
 
 	 function resolveUser(authentication,$q){
